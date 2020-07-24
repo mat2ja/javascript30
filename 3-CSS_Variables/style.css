@@ -1,0 +1,50 @@
+:root {
+    --base: #ffc600;
+    --spacing: 10px;
+    --blur: 2px;
+    
+    --font-family: 'Open Sans', sans-serif;
+}
+
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+
+body {
+    background: #193549;
+	color: white;
+    font-size: 5rem;
+	font-family: var(--font-family);
+	font-weight: 100;
+	text-align: center;
+
+    padding: 0;
+    margin: 0;
+}
+
+.controls {
+	margin-bottom: 50px;
+}
+
+input {
+	width: 100px;
+}
+
+img {
+    max-width: 100%;
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+}
+
+.hl {
+    color: var(--base);
+}
