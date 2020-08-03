@@ -1,5 +1,5 @@
-# Javascript30
-- Projects from [Javascript30](https://javascript30.com/) by Wes Bos
+# JavaScript30
+- Projects from [JavaScript30](https://javascript30.com/) by Wes Bos
 
 ---
 
