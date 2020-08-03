@@ -39,7 +39,8 @@ input {
 }
 
 img {
-    max-width: 100%;
+    max-width: 900px;
+    width: 100%;
     padding: var(--spacing);
     background: var(--base);
     filter: blur(var(--blur));
