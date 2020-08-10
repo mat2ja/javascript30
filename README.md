@@ -15,3 +15,5 @@ Live demos below:
 ### 05. [Flex Panel Image Gallery 🦋](https://05-flex-panel-gallery.vercel.app)
 
 ### 06. [Type Ahead 🔦](https://06-type-ahead.vercel.app)
+
+### 08. [Canvas 🌻](https://08-html-5-canvas.vercel.app)
