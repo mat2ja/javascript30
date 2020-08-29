@@ -17,3 +17,5 @@ Live demos below:
 ### 06. [Type Ahead 🔦](https://06-type-ahead.vercel.app)
 
 ### 08. [Canvas 🌻](https://08-html-5-canvas.vercel.app)
+
+### 10. [Click Shift To Check Multiple 🤹‍♀️](https://10-check-multiple.vercel.app)
