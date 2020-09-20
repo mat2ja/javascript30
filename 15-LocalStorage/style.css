@@ -84,3 +84,22 @@ h2 {
 	outline: 0;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+.buttons {
+	display: flex;
+	margin-top: 8px;
+}
+
+.btn {
+	font-family: inherit;
+	flex: 1;
+	padding: 0.4em;
+	font-size: 0.8em;
+	background: snow;
+	border: none;
+	cursor: pointer;
+}
+
+.btn:not(:last-child) {
+	margin-right: 4px;
+}

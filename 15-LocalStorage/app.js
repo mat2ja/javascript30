@@ -1,5 +1,8 @@
 const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.plates');
+const clearBtn = document.querySelector('.clear-all');
+const checkBtn = document.querySelector('.check-all');
+const uncheckBtn = document.querySelector('.uncheck-all');
 
 //* grab items from local storage OR start with empty array
 const items = JSON.parse(localStorage.getItem('items')) || [];
@@ -18,7 +21,7 @@ function addItem(e) {
 
     //* store current items to local storage
     // can only use string as values
-    localStorage.setItem('items', JSON.stringify(items))
+    updateLocalStorage(items);
 
     // form elements have reset method
     this.reset();
@@ -36,6 +39,10 @@ function populateList(plates = [], platesList) {
     }).join('');
 }
 
+function updateLocalStorage(items) {
+    localStorage.setItem('items', JSON.stringify(items))
+}
+
 function toggleDone(e) {
     // skip this unless its an input in .plates list
     if (!e.target.matches('input')) return;
@@ -46,7 +53,19 @@ function toggleDone(e) {
     items[index].done = !items[index].done;
 
     // update list of items
-    localStorage.setItem('items', JSON.stringify(items))
+    updateLocalStorage(items);
+}
+
+function clearItems() {
+    items.length = 0;
+    populateList(items, itemsList)
+    updateLocalStorage(items);
+}
+
+function toggleAllCheckboxes(check) {
+    items.map(item => item.done = check);
+    populateList(items, itemsList)
+    updateLocalStorage(items)
 }
 
 
@@ -54,6 +73,11 @@ addItems.addEventListener('submit', addItem);
 // event delegation
 // we listen on a clik on something higher, and then we check which element it is with e.target
 itemsList.addEventListener('click', toggleDone);
+
+clearBtn.addEventListener('click', clearItems);
+checkBtn.addEventListener('click', () => toggleAllCheckboxes(true));
+uncheckBtn.addEventListener('click', () => toggleAllCheckboxes(false));
+
 
 // on page load
 populateList(items, itemsList);
