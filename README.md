@@ -22,6 +22,6 @@ Live demos below:
 
 ### 11. [Custom Video Player 📼](https://11-custom-video-player.vercel.app) - without video cos too much to upload rn
 
-### 13. [Slide On Scroll](https://13-slide-on-scroll.vercel.app)
+### 13. [Slide On Scroll 🕺](https://13-slide-on-scroll.vercel.app)
 
 ### 15. [Local Storage 🧦](https://15-local-storage.vercel.app)
