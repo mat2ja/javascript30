@@ -27,3 +27,5 @@ Live demos below:
 ### 15. [Local Storage 🧦](https://15-local-storage.vercel.app)
 
 ### 16. [Mouse Move Shadow 🔥](https://16-mouse-move-shadow.vercel.app)
+
+### 17. [Sort Without Articles 🐱‍👤](https://17-sort-without-articles.vercel.app)
