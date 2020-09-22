@@ -11,13 +11,28 @@
         <div class="photobooth">
             <div class="controls">
                 <button class='btn' id="shutter">
-                    <box-icon name='camera'></box-icon>
+                    <box-icon name='camera' type='solid'></box-icon>
                 </button>
-                <h2>Filters <box-icon name='right-arrow' type='solid'></box-icon></h2>
+                <h2>Filters
+                    <box-icon name='right-arrow' type='solid'></box-icon>
+                </h2>
                 <div class="filters">
-                    <div class="filter" id="filter-reset" title="Normal"><box-icon name='reset'></box-icon></div>
-                    <div class="filter" id="red-effect" data-effect='redEffect' title='Red Effect'></div>
-                    <div class="filter" id="rgb-split" data-effect='rgbSplit' title='RGB Split'></div>
+                    <div class="filter" id="filter-reset" title="Normal">
+                        <box-icon name='reset'></box-icon>
+                    </div>
+                    <div class="filter" id="redEffect" data-effect='redEffect' title='Red Effect'>
+                        <box-icon type='solid' name='magic-wand'></box-icon>
+                    </div>
+                    <div class="filter" id="blueLight" data-effect='blueLight' title='blueLight'>
+                        <box-icon type='solid' name='magic-wand'></box-icon>
+                    </div>
+                    <div class="filter" id="nightVision" data-effect='nightVision' title='Night Vision'>
+                        <box-icon type='solid' name='magic-wand'></box-icon>
+                    </div>
+                    <div class="filter" id="rgbSplit" data-effect='rgbSplit' title='RGB Split'>
+                        <box-icon type='solid' name='magic-wand'></box-icon>
+                    </div>
+
                 </div>
                 <!-- <div class="rgb">
                     <div class="rgb-setting">

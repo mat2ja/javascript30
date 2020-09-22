@@ -38,7 +38,7 @@ input {
 	margin: 0 auto;
 	border-radius: 2px;
 	position: relative;
-    display: flow-root; /* my clearfix */
+	display: flow-root; /* my clearfix */
 }
 
 .photo {
@@ -112,7 +112,7 @@ input {
 		background: rgba(0, 0, 0, 0.4);
 	}
 
-	&#red-effect {
+	&#redEffect {
 		background: linear-gradient(
 			to right,
 			rgb(119, 23, 23) 30%,
@@ -121,13 +121,19 @@ input {
 		);
 	}
 
-	&#rgb-split {
+	&#rgbSplit {
 		background: linear-gradient(
 			to right bottom,
 			rgb(15, 189, 15) 30%,
 			rgb(231, 19, 19) 70%,
 			rgb(231, 19, 19) 100%
 		);
+	}
+	&#blueLight {
+		background: rgb(59, 59, 245);
+	}
+	&#nightVision {
+		background: olivedrab;
 	}
 }
 

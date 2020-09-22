@@ -78,9 +78,34 @@ const filters = {
             pixels.data[i - 150] = pixels.data[i + 0]// RED
             pixels.data[i + 500] = pixels.data[i + 1] // GREEN
             pixels.data[i - 150] = pixels.data[i + 2]// BLUE
-            // pixels[i + 3] // APLHA
         }
         ctx.globalAlpha = 0.1;
+        return pixels;
+    },
+
+    blueLight(pixels) {
+        for (let i = 0; i < pixels.data.length; i += 4) {
+            for (let i = 0; i < pixels.data.length; i += 4) {
+                pixels.data[i + 0] *= 0.6 // RED
+                pixels.data[i + 1] += 20 // GREEN
+                pixels.data[i + 2] += 120 // BLUE
+
+            }
+            return pixels;
+        }
+        return pixels;
+    },
+
+    nightVision(pixels) {
+        for (let i = 0; i < pixels.data.length; i += 4) {
+            for (let i = 0; i < pixels.data.length; i += 4) {
+                pixels.data[i + 0] *= 0.299// RED
+                pixels.data[i + 1] *= 0.587 // GREEN
+                pixels.data[i + 2] *= 0.114 // BLUE
+
+            }
+            return pixels;
+        }
         return pixels;
     }
 }

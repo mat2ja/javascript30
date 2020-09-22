@@ -90,10 +90,14 @@ input {
   .filter#filter-reset {
     fill: #ffc600;
     background: rgba(0, 0, 0, 0.4); }
-  .filter#red-effect {
+  .filter#redEffect {
     background: linear-gradient(to right, #771717 30%, #e71313 70%, #be3737 100%); }
-  .filter#rgb-split {
+  .filter#rgbSplit {
     background: linear-gradient(to right bottom, #0fbd0f 30%, #e71313 70%, #e71313 100%); }
+  .filter#blueLight {
+    background: #3b3bf5; }
+  .filter#nightVision {
+    background: olivedrab; }
 
 .rgb-setting {
   display: grid;
