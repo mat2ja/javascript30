@@ -4,6 +4,7 @@ const ctx = canvas.getContext('2d');
 const strip = document.querySelector('.strip');
 const snap = document.querySelector('.snap');
 const shutter = document.querySelector('#shutter');
+const filterElements = document.querySelectorAll('.filter');
 
 function getVideo() {
     // returns a promise
@@ -19,12 +20,13 @@ function getVideo() {
         })
 }
 
-function painToCanvas() {
+function paintToCanvas(effect) {
     // this is actually the resolution dimensions, not our specified
     const width = video.videoWidth;
     const height = video.videoHeight;
     canvas.width = width;
     canvas.height = height;
+
 
     // good to return it so we can stop it later 
     return setInterval(() => {
@@ -34,10 +36,12 @@ function painToCanvas() {
         let pixels = ctx.getImageData(0, 0, width, height);
 
         // modify pixels
-        // pixels = rgbSplit(pixels)
-        // ctx.globalAlpha = 0.1;
+        if (effect) {
+            pixels = effect(pixels)
+        }
 
-        pixels = greenScreen(pixels);
+
+        // pixels = greenScreen(pixels);
 
         // put pixels back
         ctx.putImageData(pixels, 0, 0)
@@ -56,28 +60,32 @@ function takePhoto() {
     link.setAttribute('download', 'handsome.jpeg')
     link.innerHTML = `<img src='${data}' alt='Handsome man'>`
     strip.insertBefore(link, strip.firstChild);
-
 }
 
-function redEffect(pixels) {
-    for (let i = 0; i < pixels.data.length; i += 4) {
-        pixels.data[i + 0] += 100// RED
-        pixels.data[i + 1] -= 50 // GREEN
-        pixels.data[i + 2] *= 0.5 // BLUE
-        // pixels[i + 3] // APLHA
+const filters = {
+    redEffect(pixels) {
+        for (let i = 0; i < pixels.data.length; i += 4) {
+            pixels.data[i + 0] += 100// RED
+            pixels.data[i + 1] -= 50 // GREEN
+            pixels.data[i + 2] *= 0.5 // BLUE
+            // pixels[i + 3] // APLHA
+        }
+        return pixels;
+    },
+
+    rgbSplit(pixels) {
+        for (let i = 0; i < pixels.data.length; i += 4) {
+            pixels.data[i - 150] = pixels.data[i + 0]// RED
+            pixels.data[i + 500] = pixels.data[i + 1] // GREEN
+            pixels.data[i - 150] = pixels.data[i + 2]// BLUE
+            // pixels[i + 3] // APLHA
+        }
+        ctx.globalAlpha = 0.1;
+        return pixels;
     }
-    return pixels;
 }
 
-function rgbSplit(pixels) {
-    for (let i = 0; i < pixels.data.length; i += 4) {
-        pixels.data[i - 150] = pixels.data[i + 0]// RED
-        pixels.data[i + 500] = pixels.data[i + 1] // GREEN
-        pixels.data[i - 150] = pixels.data[i + 2]// BLUE
-        // pixels[i + 3] // APLHA
-    }
-    return pixels;
-}
+
 
 
 function greenScreen(pixels) {
@@ -112,6 +120,23 @@ function greenScreen(pixels) {
 
 getVideo();
 shutter.addEventListener('click', takePhoto);
+window.addEventListener('keyup', (e) => {
+    console.log(e);
+    if (e.code === 'Enter') {
+        takePhoto();
+    }
+})
 
+let intervalId;
 // waits till video can be play
-video.addEventListener('canplay', painToCanvas);
+video.addEventListener('canplay', () => {
+    intervalId = paintToCanvas();
+    return;
+});
+
+filterElements.forEach(filter => {
+    filter.addEventListener('click', () => {
+        clearInterval(intervalId);
+        intervalId = paintToCanvas(filters[filter.dataset.effect])
+    })
+})

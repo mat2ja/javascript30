@@ -13,7 +13,14 @@
                 <button class='btn' id="shutter">
                     <box-icon name='camera'></box-icon>
                 </button>
-                <div class="rgb">
+                <h2>Filters</h2>
+                <div class="filters">
+                    <div class="filter" id="red-effect" data-effect='redEffect'></div>
+                </div>
+                <div class="filters">
+                    <div class="filter" id="rgb-split" data-effect='rgbSplit'></div>
+                </div>
+                <!-- <div class="rgb">
                     <div class="rgb-setting">
                         <label for="rmin">Red Min:</label>
                         <input type="range" min=0 max=255 name="rmin">
@@ -38,7 +45,7 @@
                         <label for="bmax">Blue Max:</label>
                         <input type="range" min=0 max=255 name="bmax">
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <canvas class="photo"></canvas>

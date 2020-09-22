@@ -64,6 +64,13 @@ input {
 	border-bottom: 0;
 	padding: 2rem 25rem 3.75rem 2rem;
 	padding-right: 25rem;
+
+	position: relative;
+	background: rgba(0, 0, 0, 0.6);
+	color: white;
+
+	display: flex;
+	align-items: center;
 }
 
 .controls .rgb {
@@ -71,6 +78,29 @@ input {
 	grid-template-columns: 1fr 1fr;
 	row-gap: 0.5rem;
 	column-gap: 2rem;
+
+	display: none;
+}
+
+.controls h2 {
+	margin-right: 1rem;
+}
+
+.filter {
+	width: 4rem;
+	height: 4rem;
+	background: red;
+	border: 5px solid black;
+	margin-left: 1rem;
+	cursor: pointer;
+}
+
+#red-effect {
+	background: linear-gradient(to right, rgb(119, 23, 23) 30%,  rgb(231, 19, 19) 70%, rgb(190, 55, 55) 100%);
+}
+
+#rgb-split {
+	background: linear-gradient(to right bottom, rgb(15, 189, 15) 30%,  rgb(231, 19, 19) 70%, rgb(231, 19, 19) 100%);
 }
 
 .rgb-setting {
@@ -145,9 +175,10 @@ input {
 #shutter {
 	position: absolute;
 	border-radius: 50%;
-	top: 8rem;
+	top: 100%;
+	transform: translateY(-46%);
 	left: 0;
-	margin: 2rem;
+	margin-left: 2rem;
 	transition: all 150ms;
 	border: 0.5rem solid rgba(0, 0, 0, 1);
 }
@@ -157,7 +188,7 @@ input {
 }
 
 #shutter:active {
-	transform: scale(0.95);
+	transform: translateY(-46%) scale(0.95);
 	background: hsl(39, 90%, 60%);
 }
 
