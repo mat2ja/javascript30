@@ -136,7 +136,12 @@ video.addEventListener('canplay', () => {
 
 filterElements.forEach(filter => {
     filter.addEventListener('click', () => {
+        console.log(filter);
         clearInterval(intervalId);
-        intervalId = paintToCanvas(filters[filter.dataset.effect])
+        if (filter.id === 'filter-reset') {
+            intervalId = paintToCanvas(null);
+        } else {
+            intervalId = paintToCanvas(filters[filter.dataset.effect])
+        }
     })
 })
