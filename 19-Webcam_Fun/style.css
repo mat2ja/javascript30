@@ -24,9 +24,17 @@ body {
 	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
+input {
+	font: inherit;
+}
+
+:focus {
+	outline: none;
+}
+
 .photobooth {
 	/* background: white; */
-	max-width: 100rem;
+	max-width: 95rem;
 	margin: 0 auto;
 	border-radius: 2px;
 	position: relative;
@@ -41,16 +49,38 @@ body {
 
 .player {
 	position: absolute;
-	margin: 0.8rem;
+	/* margin: 0.8rem; */
 	top: 0;
 	right: 0;
-	max-width: 20rem;
+	max-width: 25rem;
 	width: 40vw;
-	border-left: 0.8rem solid rgba(0, 0, 0, 1);
-	border-bottom: 0.8rem solid rgba(0, 0, 0, 1);
+	/* border-left: 0.8rem solid rgba(0, 0, 0, 1);
+	border-bottom: 0.8rem solid rgba(0, 0, 0, 1); */
+	border: 0.8rem solid rgba(0, 0, 0, 1);
 }
 
 .controls {
+	border: 0.8rem solid rgba(0, 0, 0, 1);
+	border-bottom: 0;
+	padding: 2rem 25rem 3.75rem 2rem;
+	padding-right: 25rem;
+}
+
+.controls .rgb {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	row-gap: 0.5rem;
+	column-gap: 2rem;
+}
+
+.rgb-setting {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	align-items: center;
+}
+
+.rgb-setting input {
+	width: 80%;
 }
 
 /* Strip! */
@@ -115,7 +145,7 @@ body {
 #shutter {
 	position: absolute;
 	border-radius: 50%;
-	top: 0;
+	top: 8rem;
 	left: 0;
 	margin: 2rem;
 	transition: all 150ms;
