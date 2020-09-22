@@ -1,0 +1,136 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+	background: #ffc600;
+	box-sizing: border-box;
+	scrollbar-width: thin;
+	scrollbar-color: black #ffc600;
+}
+
+body {
+	font-size: 1.6rem;
+	padding: 1rem;
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.photobooth {
+	/* background: white; */
+	max-width: 100rem;
+	margin: 0 auto;
+	border-radius: 2px;
+	position: relative;
+	display: flow-root; /* my clearfix */
+}
+
+.photo {
+	width: 100%;
+	float: left;
+	border: 0.8rem solid rgba(0, 0, 0, 1);
+}
+
+.player {
+	position: absolute;
+	margin: 0.8rem;
+	top: 0;
+	right: 0;
+	max-width: 20rem;
+	width: 40vw;
+	border-left: 0.8rem solid rgba(0, 0, 0, 1);
+	border-bottom: 0.8rem solid rgba(0, 0, 0, 1);
+}
+
+.controls {
+}
+
+/* Strip! */
+
+.strip {
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+
+.strip a {
+	display: inline-block;
+	margin-top: -1rem;
+}
+
+.strip img {
+	/* width: 140px; */
+	max-width: 100%;
+	padding: 0.8rem 0.8rem 2.5rem 0.8rem;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+	background: #f1f1f1;
+	display: inline-block;
+}
+
+.strip a:nth-child(8n + 1) img {
+	transform: rotate(10deg);
+}
+.strip a:nth-child(8n + 2) img {
+	transform: rotate(-2deg);
+}
+.strip a:nth-child(8n + 3) img {
+	transform: rotate(8deg);
+}
+.strip a:nth-child(8n + 4) img {
+	transform: rotate(-11deg);
+}
+.strip a:nth-child(8n + 5) img {
+	transform: rotate(12deg);
+}
+.strip a:nth-child(8n + 6) img {
+	transform: rotate(-6deg);
+}
+.strip a:nth-child(8n + 7) img {
+	transform: rotate(4deg);
+}
+.strip a:nth-child(8n + 8) img {
+	transform: rotate(-10deg);
+}
+
+.btn {
+	padding: 1em;
+	background: none;
+	border: none;
+	background: hsl(39, 100%, 50%);
+	color: white;
+	font: inherit;
+	cursor: pointer;
+	text-transform: uppercase;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#shutter {
+	position: absolute;
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+	margin: 2rem;
+	transition: all 150ms;
+	border: 0.5rem solid rgba(0, 0, 0, 1);
+}
+
+#shutter:hover {
+	background: hsl(39, 90%, 50%);
+}
+
+#shutter:active {
+	transform: scale(0.95);
+	background: hsl(39, 90%, 60%);
+}
+
+#shutter box-icon {
+	display: block;
+}
