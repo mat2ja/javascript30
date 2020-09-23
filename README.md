@@ -31,3 +31,5 @@ Live demos below:
 ### 17. [Sort Without Articles 🐱‍👤](https://17-sort-without-articles.vercel.app)
 
 ### 17. [Photbooth 🤳](https://phootobuth.vercel.app)
+
+### 17. [Speech Detection 🔊](https://20-speech-detection-lake.vercel.app)
