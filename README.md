@@ -40,3 +40,4 @@ Live demos below:
 
 ### 23. [Speech Synthesis 🎙](https://23-speech-synthesis.vercel.app)
 
+### 24. [Sticky Nav 🍡](https://24-sticky-nav.vercel.app)
