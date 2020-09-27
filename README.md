@@ -34,6 +34,9 @@ Live demos below:
 
 ### 20. [Speech Detection 🔊](https://20-speech-detection-lake.vercel.app)
 
-### 21 [Geolocation 🗺](https://21-geolocation.vercel.app)
+### 21. [Geolocation 🗺](https://21-geolocation.vercel.app)
 
-### 22 [Follow Along Link Highligter 🎨](https://22-follow-along-link-highlighter.vercel.app)
+### 22. [Follow Along Link Highligter 🎨](https://22-follow-along-link-highlighter.vercel.app)
+
+### 23. [Speech Synthesis 🎙](https://23-speech-synthesis.vercel.app)
+
