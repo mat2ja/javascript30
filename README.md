@@ -43,3 +43,5 @@ Live demos below:
 ### 24. [Sticky Nav 🍡](https://24-sticky-nav.vercel.app)
 
 ### 26. [Follow Along Nav 🚶‍♂️](https://26-stripe-follow-along-nav.vercel.app)
+
+### 27. [Click and Drag 👨‍✈️](https://26-stripe-follow-along-nav.mat2ja.vercel.app)
