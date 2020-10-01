@@ -50,16 +50,18 @@ a {
 }
 
 .highlight {
-	transition: all 0.2s;
-	border-bottom: 2px solid white;
+	display: block;
 	position: absolute;
 	top: 0;
-	background: white;
 	left: 0;
-	z-index: -1;
+
+	background: white;
+	border-bottom: 2px solid white;
 	border-radius: 1000px;
-	display: block;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+	z-index: -1;
+	transition: all 0.2s;
 }
 
 .menu {

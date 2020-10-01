@@ -13,7 +13,6 @@ function fixNav() {
         document.body.classList.add('fixed-nav');
     } else {
         document.body.style.paddingTop = 0;
-
         document.body.classList.remove('fixed-nav');
     }
 }
@@ -21,5 +20,4 @@ function fixNav() {
 
 const calculateTopOfNav = () => topOfNav = nav.offsetTop;
 window.addEventListener('resize', calculateTopOfNav);
-
 window.addEventListener('scroll', fixNav);
