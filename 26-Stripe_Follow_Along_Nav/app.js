@@ -31,9 +31,7 @@ function handleEnter() {
 
 function handleLeave() {
     this.classList.remove('trigger-enter', 'trigger-enter-active');
-    // this.classList.remove('trigger-enter-active'); // opacity:0;
-    // run after animation ends
-    // setTimeout(() => this.classList.remove('trigger-enter'), 500); // display:none;
+
     background.classList.remove('open'); // opacity:0;
 }
 
