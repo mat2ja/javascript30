@@ -41,3 +41,5 @@ Live demos below:
 ### 23. [Speech Synthesis 🎙](https://23-speech-synthesis.vercel.app)
 
 ### 24. [Sticky Nav 🍡](https://24-sticky-nav.vercel.app)
+
+### 26. [Follow Along Nav 🚶‍♂️](https://26-stripe-follow-along-nav.vercel.app)
