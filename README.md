@@ -45,3 +45,5 @@ Live demos below:
 ### 26. [Follow Along Nav 🚶‍♂️](https://26-stripe-follow-along-nav.vercel.app)
 
 ### 27. [Click and Drag 👨‍✈️](https://26-stripe-follow-along-nav.mat2ja.vercel.app)
+
+### 28. [Video Speed Controller 🏃‍♂️](https://28-video-speed-controller.vercel.app)
