@@ -4,10 +4,30 @@ html {
 	background: #8e24aa;
 	background: linear-gradient(
 		50deg,
-		hsl(197, 90%, 61%) 0%,
-		hsl(189, 60%, 55%) 10%,
-		hsl(176, 85%, 34%) 100%
+		hsl(207, 90%, 61%) 0%,
+		hsl(219, 60%, 55%) 10%,
+		hsl(216, 85%, 34%) 100%
 	);
+	background: linear-gradient(
+			45deg,
+			rgb(224, 92, 136) 0%,
+			hsla(340, 100%, 55%, 0) 30%
+		),
+		linear-gradient(
+			135deg,
+			hsla(225, 95%, 50%, 1) 10%,
+			hsla(225, 95%, 50%, 0) 90%
+		),
+		linear-gradient(
+			225deg,
+			rgb(65, 224, 118) 10%,
+			hsla(140, 90%, 50%, 0) 80%
+		),
+		linear-gradient(
+			315deg,
+			rgb(255, 183, 82) 100%,
+			hsla(35, 95%, 55%, 0) 70%
+		);
 }
 
 *,
