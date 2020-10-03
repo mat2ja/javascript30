@@ -69,9 +69,10 @@ function bonk(e) {
     scoreBoard.textContent = score;
 }
 
+// todo doenst always work for some reson
 function updateHighScore(res) {
     console.log('game over: ', res);
-    if (res > highscoreEl.innerHTML) {
+    if (res > highscoreEl.innerText) {
         console.log('new hs');
         highscoreEl.textContent = res;
         localStorage.setItem('score', res);
