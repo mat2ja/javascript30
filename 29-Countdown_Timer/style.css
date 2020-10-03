@@ -3,10 +3,10 @@ html {
 	font-size: 10px;
 	background: #8e24aa;
 	background: linear-gradient(
-		45deg,
-		hsl(257, 90%, 61%) 0%,
-		hsl(259, 60%, 55%) 50%,
-		hsl(216, 85%, 34%) 100%
+		50deg,
+		hsl(197, 90%, 61%) 0%,
+		hsl(189, 60%, 55%) 10%,
+		hsl(176, 85%, 34%) 100%
 	);
 }
 
@@ -19,7 +19,9 @@ html {
 button {
 	font: inherit;
 }
-
+:focus {
+	outline: none;
+}
 body {
 	margin: 0;
 	text-align: center;
@@ -87,8 +89,7 @@ body {
 	font-family: 'Inconsolata', monospace;
 }
 
-.timer__button:hover,
-.timer__button:focus {
+.timer__button:hover {
 	background: rgba(0, 0, 0, 0.2);
 	outline: 0;
 }
@@ -102,8 +103,7 @@ body {
 	background: rgba(0, 0, 0, 0.35);
 }
 
-.format-toggle:hover,
-.format-toggle:focus {
+.format-toggle:hover {
 	background: rgba(0, 0, 0, 0.45);
 	outline: 0;
 }
@@ -131,4 +131,13 @@ body {
 	background: rgba(255, 255, 255, 0.4);
 	border-bottom: 3px solid rgba(0, 0, 0, 0.2);
 	padding: 0em 0.2em;
+}
+
+@media (max-width: 1000px) {
+	.timer__controls {
+		flex-wrap: wrap;
+	}
+	.timer__controls > * {
+		/* flex: 33.333%; */
+	}
 }

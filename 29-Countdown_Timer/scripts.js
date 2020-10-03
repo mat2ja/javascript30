@@ -53,12 +53,12 @@ function startTimer() {
     timer(seconds);
 }
 
-function showErrorMsg() {
+function showErrorMsg(msg, emoji) {
     document.customForm.reset();
     clearInterval(countdown);
     timerDisplay.textContent = '';
-    document.title = '❌';
-    endTime.innerHTML = `<span class='error'>❌ I only work with numbers ❌</span>`;
+    document.title = emoji;
+    endTime.innerHTML = `<span class='error'>${emoji} ${msg} ${emoji}</span>`;
 }
 
 buttons.forEach(button => button.addEventListener('click', startTimer));
@@ -69,8 +69,12 @@ document.customForm.addEventListener('submit', function (e) {
     e.preventDefault();
     const mins = parseFloat(this.minutes.value);
     if (!mins) {
-        showErrorMsg();
+        showErrorMsg('How about a number tho?', '❌');
         throw new Error('Not a number');
+    }
+    if (mins > 1440) {
+        showErrorMsg('You\'re planning too far ahead', '🪂');
+        throw new Error('Number out of range');
     }
     timer(mins * 60);
     this.reset();
