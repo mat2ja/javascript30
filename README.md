@@ -47,3 +47,5 @@ Live demos below:
 ### 27. [Click and Drag 👨‍✈️](https://26-stripe-follow-along-nav.mat2ja.vercel.app)
 
 ### 28. [Video Speed Controller 🏃‍♂️](https://28-video-speed-controller.vercel.app)
+
+### 29. [Countdown Timer ⏲](https://29-countdown-timer.vercel.app)
