@@ -2,6 +2,8 @@ let countdown;
 const timerDisplay = document.querySelector('.display__time-left');
 const endTime = document.querySelector('.display__end-time');
 const buttons = document.querySelectorAll('[data-time]');
+const formatToggle = document.querySelector('.format-toggle');
+let timeFormat = 24;
 
 function timer(seconds) {
     // clear any existing timers
@@ -11,7 +13,7 @@ function timer(seconds) {
     const then = now + seconds * 1000;
 
     displayTimeLeft(seconds);
-    displayEndTime(then);
+    displayEndTime(then, { timeFormat });
 
     countdown = setInterval(() => {
         const secondsLeft = Math.round((then - Date.now()) / 1000);
@@ -33,17 +35,16 @@ function displayTimeLeft(seconds) {
     timerDisplay.textContent = display;
 }
 
-function displayEndTime(timestamp, timeFormat = 24) {
+function displayEndTime(timestamp, { timeFormat = 24 }) {
     const end = new Date(timestamp);
-    const hour = end.getHours();
+    let hour = end.getHours();
     const minutes = end.getMinutes();
 
-    if (timeFormat === 24) {
-        endTime.textContent = `Be Back At ${hour}:${minutes < 10 ? '0' : ''}${minutes}`
-    } else if (timeFormat) {
-        const adjustedHour = hour > 12 ? hour - 12 : hour;
-        endTime.textContent = `Be Back At ${adjustedHour}:${minutes < 10 ? '0' : ''}${minutes}`
+    if (timeFormat === 12) {
+        hour = hour > 12 ? hour - 12 : hour;
     }
+
+    endTime.innerHTML = `Be Back At <span class='hl'>${hour}:${minutes < 10 ? '0' : ''}${minutes}</span>`
 }
 
 function startTimer() {
@@ -52,14 +53,31 @@ function startTimer() {
     timer(seconds);
 }
 
+function showErrorMsg() {
+    document.customForm.reset();
+    clearInterval(countdown);
+    timerDisplay.textContent = '';
+    document.title = '❌';
+    endTime.innerHTML = `<span class='error'>❌ I only work with numbers ❌</span>`;
+}
+
 buttons.forEach(button => button.addEventListener('click', startTimer));
 
 // if element has a name property, we can selecting it like that
 // even nest names inside names > document.customForm.minutes
 document.customForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    const mins = this.minutes.value;
+    const mins = parseFloat(this.minutes.value);
+    if (!mins) {
+        showErrorMsg();
+        throw new Error('Not a number');
+    }
     timer(mins * 60);
     this.reset();
     console.log(mins);
+})
+
+formatToggle.addEventListener('click', () => {
+    timeFormat = timeFormat === 24 ? 12 : 24;
+    formatToggle.innerHTML = `${timeFormat}<span>hr</span>`;
 })
