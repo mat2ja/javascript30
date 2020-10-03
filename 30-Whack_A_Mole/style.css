@@ -1,0 +1,161 @@
+html {
+	box-sizing: border-box;
+	font-size: 10px;
+	background: #ffc600;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Amatic SC', cursive;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	line-height: 1;
+	text-align: center;
+	margin-top: 6.4rem;
+	gap: 2.4rem;
+	font-weight: 700;
+}
+
+h1 {
+	text-align: center;
+	font-size: 10rem;
+	line-height: 1;
+	margin: 0;
+}
+
+.score {
+	font-size: 10rem;
+	background: rgba(255, 255, 255, 0.2);
+	padding: 0 3rem;
+	line-height: 1;
+	border-radius: 1rem;
+	min-width: 1.4em;
+}
+
+.game {
+	width: 60rem;
+	height: 40rem;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+
+.hole {
+	flex: 1 0 33.33%;
+	overflow: hidden;
+	position: relative;
+}
+
+.hole:after {
+	content: '';
+	display: block;
+	background: url(dirt.svg) bottom center no-repeat;
+	background-size: contain;
+	width: 100%;
+	height: 7rem;
+	position: absolute;
+	z-index: 2;
+	bottom: -3rem;
+}
+
+.mole {
+	background: url('mole.svg') bottom center no-repeat;
+	background-size: 60%;
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	height: 100%;
+	transition: all 0.4s;
+	cursor: crosshair;
+}
+
+.hole.up .mole {
+	top: 0;
+}
+
+/* todo */
+.mole.hit {
+	filter: drop-shadow(0 0 2rem red);
+}
+
+.buttons {
+	margin-top: 5rem;
+	display: flex;
+	gap: 4rem;
+}
+
+.btn {
+	background: none;
+	font: inherit;
+	color: inherit;
+	border: none;
+	padding: 0.4em 1em;
+	font-size: 2.8rem;
+	font-weight: 700;
+	border-radius: 1rem;
+	background: linear-gradient(145deg, #ffd400, #e6b200);
+	box-shadow: 7px 7px 0px #664f00, -7px -7px 0px #ffff00;
+	transition: all 200ms;
+	cursor: pointer;
+}
+.btn:active {
+	transform: scale(0.95);
+	box-shadow: 4px 4px 0px #664f00, -4px -4px 0px #ffff00;
+}
+
+input {
+	font: inherit;
+	background: rgba(255, 255, 255, 0.2);
+	border: none;
+	font-size: 2.8rem;
+	width: 4em;
+	font-weight: 700;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.highscore {
+	background: rgba(255, 255, 255, 0.2);
+	border: none;
+	font-size: 2.8rem;
+	font-weight: 700;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .4em;
+    border-radius: 1rem;
+}
+
+.highscore-value {
+    margin-left: .3em;
+    font-size: 1.2em;
+}
+.duration-control {
+	display: flex;
+	position: relative;
+}
+
+#timer-icon {
+	position: absolute;
+	top: -1.5rem;
+	right: 0;
+	transform: translateX(50%) rotate(25deg);
+	width: 3rem;
+	height: 3rem;
+	display: block;
+}

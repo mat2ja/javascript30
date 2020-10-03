@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Whack A Mole!</title>
+        <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <div class="title">
+            <h1>Whack-a-mole!</h1>
+            <div class="score">0</div>
+        </div>
+        <div class="buttons">
+            <div class="highscore">highscore: <span class="highscore-value">0</span></div>
+            <button onClick="startGame()" class="btn" id="start-btn">Start!</button>
+            <div class="duration-control" title="Duration">
+                <input type="number" value="10" class="duration" placeholder="10">
+                <box-icon name='timer' type='solid' id="timer-icon"></box-icon>
+
+            </div>
+        </div>
+
+        <div class="game">
+            <div class="hole hole1">
+                <div class="mole"></div>
+            </div>
+            <div class="hole hole2">
+                <div class="mole"></div>
+            </div>
+            <div class="hole hole3">
+                <div class="mole"></div>
+            </div>
+            <div class="hole hole4">
+                <div class="mole"></div>
+            </div>
+            <div class="hole hole5">
+                <div class="mole"></div>
+            </div>
+            <div class="hole hole6">
+                <div class="mole"></div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+        <script src="app.js"></script>
+    </body>
+
+</html>
