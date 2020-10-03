@@ -49,3 +49,8 @@ Live demos below:
 ### 28. [Video Speed Controller 🏃‍♂️](https://28-video-speed-controller.vercel.app)
 
 ### 29. [Countdown Timer ⏲](https://29-countdown-timer.vercel.app)
+
+### 30. [Whack-A-Mole 🐰](https://30-whack-a-mole.vercel.app)
+
+---
+# THANK YOU AND GOODNIGHT
